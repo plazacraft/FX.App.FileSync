@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="FileSyncConfig"
+    targetNamespace="urn:x-fx.org:fx.app.filesync-1.0-lib.config"
+    elementFormDefault="qualified"
+    xmlns="urn:x-fx.org:fx.app.filesync-1.0-lib.config"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+
+
+  <xs:simpleType name="ResolvingType">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Node"/>
+          <xs:enumeration value="Newest"/>
+          <xs:enumeration value="SkipIfConflict"/>
+          <!--<xs:enumeration value="AlwaysSkip"/>
+          <xs:enumeration value="Default"/>-->
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+
+  <xs:element name="BackupType">
+    <xs:simpleType>
+      <xs:list>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Updated" >
+              <xs:annotation>
+                <xs:documentation>Do backup for update operation</xs:documentation>
+              </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="Deleted" >
+              <xs:annotation>
+                <xs:documentation>Do backup for delete operation</xs:documentation>
+              </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="Conflict" >
+              <xs:annotation>
+                <xs:documentation>Do backup only for conflicts. If not specified do backup for Delete or Update always not matter if conflict occurs</xs:documentation>
+              </xs:annotation>
+            </xs:enumeration>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:list>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="Node">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="BackupType" minOccurs="0" maxOccurs="1" />
+      </xs:sequence>
+      <xs:attribute name="Name" type="xs:string" use="required" />
+      <xs:attribute name="Type" type="xs:string" use="required" />
+      <xs:attribute name="Priority" type="xs:int" use="required" />
+      <xs:attribute name="Enabled" type="xs:boolean" use="optional" default="true" />
+      <xs:attribute name="ConnectionString" type="xs:string" use="required" />
+      <xs:attribute name="BackupConnectionString" type="xs:string" use="optional" />
+      <xs:attribute name="BufferSize" type="xs:int" default="1048576" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="FileSyncConfig" >
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Node" minOccurs="0" maxOccurs="unbounded"  />
+      </xs:sequence>
+      <xs:attribute name="Resolving" type="ResolvingType" use="required" />
+    </xs:complexType>
+  </xs:element>
+
+
+</xs:schema>

@@ -1,0 +1,4 @@
+Path;Size;Last Modified;"Status";Conflict Resolving;Message;Node1;Node1 - Size; Node1 - LastModified;Node1 - Action;Node2; Node2 - Size;Node2 - LastModified;Node2 - Action
+folder;0;2016-01-01 12:00;Synchronized;Default;;Added;0;2016-01-01 12:00;Added;Added;0;2016-01-01 12:00;Added
+folder/test.txt;0;2016-01-01 12:00;Synchronized;Default;;Added;0;2016-01-01 12:00;Added;Added;0;2016-01-01 12:00;Added
+test.txt;0;2016-01-01 12:00;Synchronized;Default;;Added;0;2016-01-01 12:00;Added;Added;0;2016-01-01 12:00;Added

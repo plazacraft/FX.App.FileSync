@@ -1,0 +1,11 @@
+﻿FX.App.FileSync.exe [[-<option> <args>] -<option> <args>...]
+
+Options
+config <config> - Path to the settings folder. This path can be absolute or working dir relative. This option is required.
+sync [<name>] - Do synchronization. Name is the name of the sync, if omitted then name is generated.
+path (folder | file) <path> - Relative path to the folder of file to synchronize. If  not provided then all files from the config will be synchronized.
+name <name> - Name of the application. If not provided then default FX.App.FileSync is used.
+clean <number> - This option will clean settings folder and leave <number> last files (e.g. two last data files).
+
+Example:
+FX.App.FileSync.exe -config Sync01 -path "Folder 01\file01.txt" file

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Config xmlns="urn:x-fx.org:fx.core.net-1.0-lib.config">
+  <Application Name="FX.App.FileSync">
+    <XmlValue Namespace="FX.App.FileSync.Lib" Key="Logging">
+      <Provider xmlns="urn:x-fx.org:fx.core.net-1.0-lib.logging" Type="FX.Core.NET.Lib.Logging.Providers.MultiProvider, FX.Core.NET.Lib">
+        <Providers>
+          <Provider Type="FX.Core.NET.Lib.Logging.Providers.ConsoleProvider, FX.Core.NET.Lib" TraceSeverity="CriticalError Error Warning" />
+          <Provider Type="FX.Core.NET.Lib.Logging.Providers.FileProvider, FX.Core.NET.Lib" ConnectionString="{Current}\Logs\Log.csv" SizeLimit="-1" TimeLimit="-1"  />
+        </Providers>
+      </Provider>
+    </XmlValue>
+    <XmlValue Namespace="FX.App.FileSync.Lib" Key="Synchronization">
+      <FileSyncConfig  xmlns="urn:x-fx.org:fx.app.filesync-1.0-lib.config" Resolving="Newest">
+            <Node Name="Node1" Type="FX.App.FileSync.Lib.Providers.SystemFilesProvider, FX.App.FileSync.Lib" Priority="1" Enabled="true" ConnectionString="{Current}/TestData/Node1" />
+            <Node Name="Node2" Type="FX.App.FileSync.Lib.Providers.SystemFilesProvider, FX.App.FileSync.Lib" Priority="2" Enabled="true" ConnectionString="{Current}/TestData/Node2" />
+        </FileSyncConfig>      
+    </XmlValue>
+  </Application>
+</Config>

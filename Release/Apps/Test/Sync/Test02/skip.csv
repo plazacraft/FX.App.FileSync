@@ -1,0 +1,5 @@
+Path;Size;Last Modified;Status;Conflict Resolving;Msg;Node01;Node01 - Size;Node01 - Last Modified;Node01 - Action;Node02;Node02 - Size;Node02 - Last Modified;Node02 - Action;Node03;Node03 - Size;Node03 - Last Modified;Node03 - Action
+Folder 02\file 01.txt;;;Synchronized;SkipIfConflict;;Added;15;12/1/2016 12:34:08 PM;None;None;15;12/1/2016 12:34:08 PM;Added;None;15;12/1/2016 12:34:08 PM;Added
+Folder 01\Folder 01\file 02.txt;;;Synchronized;AlwaysSkip;;Added;15;12/1/2016 12:34:08 PM;None;None;15;12/1/2016 12:34:08 PM;Added;None;15;12/1/2016 12:34:08 PM;Added
+Folder 03;;;Synchronized;AlwaysSkip;;Added;0;12/7/2016 6:46:33 PM;None;Added;0;12/7/2016 6:46:33 PM;None;Added;0;12/7/2016 6:46:33 PM;None
+Folder 04;;;Synchronized;SkipIfConflict;;Added;0;12/7/2016 6:46:33 PM;None;Added;0;12/7/2016 6:46:33 PM;None;Added;0;12/7/2016 6:46:33 PM;None
